@@ -1,0 +1,55 @@
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  padding: 20px;
+  background-color: rgba($color-primary, 0.6);
+  overflow-y: auto;
+  cursor: pointer;
+
+  &_person {
+    display: flex;
+  }
+
+  &__body {
+    position: relative;
+    cursor: default;
+    margin: auto;
+    max-width: 768px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: $color-background;
+    padding: 24px 20px 48px;
+  }
+
+  &__container {
+    max-width: 632px;
+    margin: 0 auto;
+  }
+
+  &__close {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    background-color: $color-secondary;
+    border-radius: 50%;
+    color: $color-grey-dark;
+    transition: color $transition, outline-color $transition;
+    outline: 1px solid transparent;
+    outline-offset: -2px;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:focus-visible {
+      outline-color: $color-primary;
+    }
+  }
+}

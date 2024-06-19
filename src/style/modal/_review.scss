@@ -1,0 +1,54 @@
+.review {
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    padding: 14px;
+    border-radius: 8px;
+    background-color: $color-secondary;
+    display: grid;
+    grid-template-areas: "subtitle stars" "text text";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 95px;
+  }
+
+  &__subtitle {
+    grid-area: subtitle;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__stars {
+    grid-area: stars;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+  }
+
+  &__text {
+    grid-area: text;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  &__open {
+    display: block;
+    margin-left: auto;
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}

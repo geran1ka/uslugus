@@ -3,13 +3,19 @@
 @import "style/var";
 @import "style/default";
 
-@import "style/modules/header/header";
-@import "style/modules/header/search";
+@import "style/header/header";
+@import "style/header/search";
 
-@import "style/modules/services/services";
-@import "style/modules/services/service";
-@import "style/modules/services/category";
+@import "style/services/services";
+@import "style/services/service";
+@import "style/services/category";
 
-@import "style/modules/modal/modal";
+@import "style/footer/footer";
 
-@import "style/modules/footer/footer";
+@import "style/modal/modal";
+@import "style/modal/person";
+@import "style/modal/about";
+@import "style/modal/form";
+@import "style/modal/rating";
+@import "style/modal/review";
+@import "style/modal/stars";

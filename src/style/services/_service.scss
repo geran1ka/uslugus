@@ -4,8 +4,12 @@
   background-color: $color-secondary;
   display: grid;
   grid-template-columns: 50px 1fr max-content;
-  grid-template-areas: "avatar present price" ". . review";
+  grid-template-areas: "avatar present price" "contacts contacts review";
   gap: 21px 24px;
+
+  &_person {
+    gap: 40px 14px;
+  }
 
   &__avatar {
     grid-area: avatar;
@@ -16,6 +20,7 @@
   }
 
   &__title {
+    font-weight: 400;
     font-size: 24px;
     margin-bottom: 10px;
   }
@@ -57,8 +62,29 @@
       display: block;
       width: 14px;
       height: 14px;
-      background-image: url("../../../img/icon-comment.svg");
+      background-image: url("../../img/icon-comment.svg");
       background-size: 14px 14px;
+    }
+  }
+
+  &__contacts {
+    grid-area: contacts;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 9px 8px;
+    color: $color-primary;
+    transition: color $transition;
+    font-weight: 300;
+
+    &:hover {
+      color: $color-svg;
+    }
+
+    & svg {
+      color: $color-svg;
     }
   }
 }
