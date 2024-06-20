@@ -13,9 +13,12 @@
 @import "style/footer/footer";
 
 @import "style/modal/modal";
-@import "style/modal/person";
-@import "style/modal/about";
-@import "style/modal/form";
-@import "style/modal/rating";
-@import "style/modal/review";
 @import "style/modal/stars";
+@import "style/modal/form";
+
+@import "style/modal/person/person";
+@import "style/modal/person/about";
+@import "style/modal/person/rating";
+@import "style/modal/person/review";
+
+@import "style/modal/sign-up/avatar";

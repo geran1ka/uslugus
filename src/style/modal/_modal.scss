@@ -11,6 +11,14 @@
     display: flex;
   }
 
+  &_sign-up {
+    display: none;
+  }
+
+  &_sign-in {
+    display: none;
+  }
+
   &__body {
     position: relative;
     cursor: default;
