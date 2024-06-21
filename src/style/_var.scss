@@ -19,9 +19,10 @@ $color-svg: #4163bb;
 $transition: 0.3s ease-in-out;
 
 $desktop: 1600px;
-$laptop: 1200px;
-$tablet: 1000px;
-$mobile: 540px;
+$laptop: 1024px;
+$tablet: 768px;
+$mobile: 520px;
+$mini: 360px;
 
 @mixin desktop {
   @media (max-width: $desktop) {
@@ -42,6 +43,12 @@ $mobile: 540px;
 }
 
 @mixin mobile {
+  @media (max-width: $mini) {
+    @content;
+  }
+}
+
+@mixin mini {
   @media (max-width: $mobile) {
     @content;
   }

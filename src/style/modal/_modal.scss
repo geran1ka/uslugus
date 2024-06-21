@@ -2,10 +2,18 @@
   display: none;
   position: fixed;
   inset: 0;
-  padding: 20px;
+  padding: 40px;
   background-color: rgba($color-primary, 0.6);
   overflow-y: auto;
   cursor: pointer;
+
+  @include tablet {
+    padding: 20px;
+  }
+
+  @include mini {
+    padding: 0;
+  }
 
   &_person {
     display: flex;
@@ -43,6 +51,12 @@
     transition: color $transition, outline-color $transition;
     outline: 1px solid transparent;
     outline-offset: -2px;
+
+    @include mini {
+      transform: none;
+      box-shadow: 0 0 10px 10px $color-grey;
+      z-index: 10;
+    }
 
     &:hover {
       color: $color-primary;

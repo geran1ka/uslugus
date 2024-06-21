@@ -1,25 +1,51 @@
 .header {
   padding: 25px 0;
 
+  @include mobile {
+    padding: 15px 0;
+  }
+
   &__container {
     display: flex;
     align-items: center;
+    gap: 20px 30px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   &__logo {
     max-width: 112px;
     width: 100%;
-    margin-right: 88px;
+    margin-right: 58px;
+
+    @include laptop {
+      margin-right: 38px;
+    }
+
+    @include tablet {
+      margin-right: 0;
+    }
   }
 
   &__search {
     margin-right: auto;
+
+    @include tablet {
+      order: 1;
+    }
   }
 
   &__auth {
     display: flex;
     align-items: center;
     gap: 40px;
+
+    @include laptop {
+      gap: 30px;
+    }
   }
 
   &__auth-btn {
@@ -35,6 +61,11 @@
 
     &:active {
       color: $color-gold-light;
+    }
+
+    @include mobile {
+      font-size: 0;
+      gap: 0;
     }
 
     &_sign-in {
