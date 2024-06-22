@@ -1,9 +1,11 @@
 .avatar {
   &__label {
     display: flex;
+    align-items: center;
     gap: 11px;
     cursor: pointer;
     transition: color $transition;
+    flex-wrap: wrap;
 
     &:hover {
       color: $color-main-dark;
@@ -13,11 +15,20 @@
         color: $color-primary;
       }
     }
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+      gap: 16px;
+    }
   }
 
   &__text {
     font-weight: 300;
     font-size: 16px;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__imput-wrapper {
@@ -35,10 +46,15 @@
   }
 
   &__input-text {
+    display: inline-block;
     border: 1px solid $color-main;
     padding: 10px 20px;
     border-radius: 4px;
     transition: background-color $transition, border-color $transition;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__result {
