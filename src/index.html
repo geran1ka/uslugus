@@ -144,7 +144,7 @@
               <li class="category__item">
                 <button
                   class="category__btn category__btn_photographer"
-                  value="photographer"
+                  data-value="photographer"
                 >
                   <span>Фотограф</span>
                 </button>
@@ -152,7 +152,7 @@
               <li class="category__item">
                 <button
                   class="category__btn category__btn_makeup"
-                  value="makeup"
+                  data-value="makeup"
                 >
                   <span>Визажист</span>
                 </button>
@@ -160,7 +160,7 @@
               <li class="category__item">
                 <button
                   class="category__btn category__btn_masseur"
-                  value="masseur"
+                  data-value="masseur"
                 >
                   <span>Массажист</span>
                 </button>
@@ -168,7 +168,7 @@
               <li class="category__item">
                 <button
                   class="category__btn category__btn_handymen"
-                  value="handymen"
+                  data-value="handymen"
                 >
                   <span>Муж на час</span>
                 </button>
@@ -176,7 +176,7 @@
               <li class="category__item">
                 <button
                   class="category__btn category__btn_cosmetolog"
-                  value="cosmetolog"
+                  data-value="cosmetolog"
                 >
                   <span>Косметолог</span>
                 </button>
@@ -184,7 +184,7 @@
               <li class="category__item">
                 <button
                   class="category__btn category__btn_electrician"
-                  value="electrician"
+                  data-value="electrician"
                 >
                   <span>Электрик</span>
                 </button>
@@ -192,7 +192,7 @@
               <li class="category__item">
                 <button
                   class="category__btn category__btn_manecurist"
-                  value="manecurist"
+                  data-value="manecurist"
                 >
                   <span>Мастер маникюра</span>
                 </button>
@@ -200,7 +200,7 @@
               <li class="category__item">
                 <button
                   class="category__btn category__btn_plumber"
-                  value="plumber"
+                  data-value="plumber"
                 >
                   <span>Сантехник</span>
                 </button>
@@ -447,8 +447,6 @@
                   Быстро, профессионально, качественно! Работой очень доволен!
                   Рекомендую!
                 </p>
-
-                <button class="review__open review__open_text">Свернуть</button>
               </li>
 
               <li class="review__item">
@@ -683,10 +681,6 @@
                   профессионально, качественно! Работой очень доволен!
                   Рекомендую!
                 </p>
-
-                <button class="review__open review__open_text">
-                  Развернуть
-                </button>
               </li>
             </ul>
 
@@ -851,7 +845,11 @@
           <fieldset class="form__fieldset form__fieldset_service">
             <label class="form__label">
               <span class="form__text">Категория</span>
-              <select class="form__select" name="category" id="">
+              <select
+                class="form__select form__select_category"
+                name="category"
+                id=""
+              >
                 <option class="form__option" value="">
                   Выберите категорию
                 </option>
@@ -904,7 +902,7 @@
               <label class="form__text" for="paswword">Пароль</label>
               <div class="form__password">
                 <input
-                  class="form__input"
+                  class="form__input form__input_password"
                   type="password"
                   id="password"
                   name="password"
@@ -912,6 +910,7 @@
                 <button
                   class="form__password-eye"
                   aria-label="Показать пароль"
+                  type="button"
                 ></button>
               </div>
             </div>
@@ -922,7 +921,7 @@
               >
               <div class="form__password">
                 <input
-                  class="form__input"
+                  class="form__input form__input_password"
                   type="password"
                   name="password-repeat"
                   id="password-repeat"
@@ -930,6 +929,7 @@
                 <button
                   class="form__password-eye"
                   aria-label="Показать пароль"
+                  type="button"
                 ></button>
               </div>
             </div>
@@ -998,7 +998,7 @@
               <label class="form__text" for="paswword">Пароль</label>
               <div class="form__password">
                 <input
-                  class="form__input"
+                  class="form__input form__input_password"
                   type="password"
                   id="password-in"
                   name="password-in"
@@ -1006,6 +1006,7 @@
                 <button
                   class="form__password-eye"
                   aria-label="Показать пароль"
+                  type="button"
                 ></button>
               </div>
             </div>

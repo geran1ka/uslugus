@@ -6,6 +6,7 @@
   background-color: rgba($color-primary, 0.6);
   overflow-y: auto;
   cursor: pointer;
+  z-index: 999;
 
   @include tablet {
     padding: 20px;
@@ -24,7 +25,7 @@
   }
 
   &_sign-in {
-    display: flex;
+    display: none;
   }
 
   &__body {

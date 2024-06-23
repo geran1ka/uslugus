@@ -1,15 +1,27 @@
 .category {
+  position: relative;
+
   &__title {
     display: flex;
     align-items: center;
     gap: 10px;
     width: 180px;
+    position: relative;
+    z-index: 5;
   }
 
   &__list {
     padding-top: 24px;
     @include tablet {
       display: none;
+      position: absolute;
+      z-index: 3;
+      top: -16px;
+      left: -16px;
+      box-shadow: 0 4px 10px 0 rgba($color-primary, 0.1);
+      background: $color-secondary;
+      border-radius: 12px;
+      padding: 60px 12px 16px 16px;
     }
   }
 
