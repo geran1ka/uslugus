@@ -1,5 +1,6 @@
 import "./index.html";
 import "./index.scss";
+import { avatarController } from "./modules/avatarController.js";
 import { choicesController } from "./modules/choicesController.js";
 import { modalController } from "./modules/modalController.js";
 import { selectController } from "./modules/selectController.js";
@@ -55,6 +56,10 @@ const init = () => {
 
   showPassword();
   choicesController();
+  const crp = avatarController({
+    inputFile: ".avatar__input",
+    uploadResult: ".avatar__result",
+  });
 };
 
 init();

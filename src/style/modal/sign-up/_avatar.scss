@@ -6,6 +6,7 @@
     cursor: pointer;
     transition: color $transition;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 
     &:hover {
       color: $color-main-dark;
