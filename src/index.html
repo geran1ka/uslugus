@@ -840,7 +840,7 @@
 
             <label class="form__label">
               <span class="form__text">Телефон</span>
-              <input class="form__input" type="number" name="tel" />
+              <input class="form__input" type="number" name="phone" />
             </label>
 
             <label class="form__label">
@@ -855,7 +855,6 @@
               <select
                 class="form__select form__select_category"
                 name="category"
-                id=""
               >
                 <option class="form__option" value="">
                   Выберите категорию
@@ -885,7 +884,10 @@
             <div class="form__label">
               <label class="form__text" for="price">Цена</label>
               <div class="form__wrapper-price">
-                <select class="form__select form__select_price" id="">
+                <select
+                  class="form__select form__select_price"
+                  name="direction"
+                >
                   <option class="form__option" value="from">от</option>
                   <option class="form__option" value="exactly">равно</option>
                   <option class="form__option" value="up to">до</option>
@@ -899,7 +901,7 @@
               <textarea
                 class="form__textarea"
                 type="text"
-                name="komment"
+                name="about"
               ></textarea>
             </label>
           </fieldset>
@@ -930,7 +932,7 @@
                 <input
                   class="form__input form__input_password"
                   type="password"
-                  name="password-repeat"
+                  name="password"
                   id="password-repeat"
                 />
                 <button
