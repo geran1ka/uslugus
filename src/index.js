@@ -1,7 +1,10 @@
 import "./index.html";
 import "./index.scss";
-import { choicesController } from "./modules/choicesController.js";
+import { getCategory } from "./modules/getCategory.js";
+// import { choicesController } from "./modules/choicesController.js";
 import { modalController } from "./modules/modalController.js";
+import { renderList } from "./modules/renderList.js";
+import { searchControll } from "./modules/searchControll.js";
 import { selectController } from "./modules/selectController.js";
 import { showPassword } from "./modules/showPassword.js";
 
@@ -54,7 +57,11 @@ const init = () => {
   });
 
   showPassword();
-  choicesController();
+  // choicesController();
+
+  getCategory();
+  renderList();
+  searchControll();
 };
 
 init();
