@@ -1,5 +1,6 @@
 import { avatarController } from "./avatarController";
 import { API_URL } from "./const";
+import { createCard } from "./createCard";
 import { postData } from "./postData";
 
 export const signInController = () => {};

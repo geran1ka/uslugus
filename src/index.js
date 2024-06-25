@@ -66,8 +66,6 @@ const init = () => {
   renderList();
   searchControll();
 
-  // choicesController();
-
   ratingController();
   signUpController(evenetModalSignUp.closeModal);
 };
