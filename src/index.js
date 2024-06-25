@@ -9,10 +9,10 @@ import { searchControll } from "./modules/searchControll.js";
 import { selectController } from "./modules/selectController.js";
 import { showPassword } from "./modules/showPassword.js";
 import { ratingController } from "./modules/ratingController.js";
-import { signUpController } from "./modules/sign.js";
+import { signInController, signUpController } from "./modules/sign.js";
 
 const init = () => {
-  modalController({
+  const evenetModalSignIn = modalController({
     modal: ".modal_sign-in",
     btnOpen: ".header__auth-btn_sign-in",
     btnClose: ".modal__close",
@@ -68,6 +68,7 @@ const init = () => {
 
   ratingController();
   signUpController(evenetModalSignUp.closeModal);
+  signInController(evenetModalSignIn.closeModal);
 };
 
 init();
