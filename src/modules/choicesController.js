@@ -5,9 +5,6 @@ export const choicesController = () => {
     searchEnabled: false,
     shouldSort: false,
     itemSelectText: "",
-    classNames: {
-      containerOuter: "choices form__select_category",
-    },
   };
   new Choices(".form__select_category", {
     ...option,

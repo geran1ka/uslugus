@@ -1,11 +1,15 @@
 import "./index.html";
 import "./index.scss";
+
+import { getCategory } from "./modules/getCategory.js";
+import { avatarController } from "./modules/avatarController.js";
 import { choicesController } from "./modules/choicesController.js";
 import { modalController } from "./modules/modalController.js";
 import { renderList } from "./modules/renderList.js";
 import { searchControll } from "./modules/searchControll.js";
 import { selectController } from "./modules/selectController.js";
 import { showPassword } from "./modules/showPassword.js";
+import { ratingController } from "./modules/ratingController.js";
 
 const init = () => {
   modalController({
@@ -57,6 +61,18 @@ const init = () => {
 
   showPassword();
   choicesController();
+
+  getCategory();
+  renderList();
+  searchControll();
+
+  // choicesController();
+  const crp = avatarController({
+    inputFile: ".avatar__input",
+    uploadResult: ".avatar__result",
+  });
+
+  ratingController();
 };
 
 init();

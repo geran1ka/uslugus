@@ -13,7 +13,6 @@ export const avatarController = ({ inputFile, uploadResult }) => {
   });
 
   const readFile = ({ target }) => {
-    console.log("target: ", target);
     if (target.files && target.files[0]) {
       const reader = new FileReader();
       reader.addEventListener("load", (event) => {
