@@ -7,7 +7,9 @@ export const renderList = async (url = `${API_URL}/api/service`) => {
   serviceList.textContent = "";
 
   const data = await getData(url);
-  console.log("data: ", data);
+  if (!data) {
+    return console.log("Ошибка");
+  }
 
   const cards = data.map(createCard);
 

@@ -2,14 +2,16 @@ import { comment } from "postcss/lib/postcss";
 import starSVG from "../img/star.svg";
 import starOSVG from "../img/star-o.svg";
 
-export const createStars = (comments) => {
-  const stars =
-    Math.round(
-      comments.reduce((acc, item) => acc + +item.stars, 0) / comments.length
-    ) || 0;
+export const createStars = (commentsOrStars) => {
+  const stars = Array.isArray(commentsOrStars)
+    ? Math.round(
+        commentsOrStars.reduce((acc, item) => acc + +item.stars, 0) /
+          commentsOrStars.length
+      ) || 0
+    : commentsOrStars;
 
   const wrapper = document.createElement("div");
-  wrapper.classList.add("service__stars", "stars");
+  wrapper.classList.add("stars");
 
   for (let i = 0; i < 5; i++) {
     const star = document.createElement("img");

@@ -41,14 +41,14 @@ export const modalController = ({
 
         setTimeout(() => {
           modalElem.style.visibility = "hidden";
-          data.handlerCloseModal();
+          data.handlerCloseModal({ modalElem });
         }, time);
 
         window.removeEventListener("keydown", data.closeModal);
       }
     },
-    openModal: async () => {
-      await data.handlerOpenModal();
+    openModal: async (handler) => {
+      await data.handlerOpenModal({ handler, modalElem });
 
       modalElem.style.visibility = "visible";
       modalElem.style.opacity = 1;
@@ -58,8 +58,9 @@ export const modalController = ({
 
   if (parrentBtns) {
     handlerElems.addEventListener("click", ({ target }) => {
-      if (target.closest(btnOpen)) {
-        data.openModal();
+      const handler = target.closest(btnOpen);
+      if (handler) {
+        data.openModal(handler);
       }
     });
   } else {

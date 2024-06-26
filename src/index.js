@@ -10,8 +10,14 @@ import { selectController } from "./modules/selectController.js";
 import { showPassword } from "./modules/showPassword.js";
 import { ratingController } from "./modules/ratingController.js";
 import { signInController, signUpController } from "./modules/sign.js";
+import { getData } from "./modules/getData.js";
+import { API_URL } from "./modules/const.js";
+import { renderModal } from "./modules/renderModal.js";
 
-const init = () => {
+const init = async () => {
+  await getCategory();
+  renderList();
+
   const evenetModalSignIn = modalController({
     modal: ".modal_sign-in",
     btnOpen: ".header__auth-btn_sign-in",
@@ -28,7 +34,13 @@ const init = () => {
     modal: ".modal_person",
     btnOpen: ".service",
     parrentBtns: ".services__list",
-    handlerOpenModal: () => {
+    handlerOpenModal: async ({ handler, modalElem }) => {
+      const data = await getData(
+        `${API_URL}/api/service/${handler.dataset.id}`
+      );
+
+      renderModal(modalElem, data);
+
       const comments = document.querySelectorAll(".review__text");
       comments.forEach((comment) => {
         if (comment.scrollHeight > 38) {
@@ -61,12 +73,8 @@ const init = () => {
 
   showPassword();
   choicesController();
-
-  getCategory();
-  renderList();
   searchControll();
 
-  ratingController();
   signUpController(evenetModalSignUp.closeModal);
   signInController(evenetModalSignIn.closeModal);
 };

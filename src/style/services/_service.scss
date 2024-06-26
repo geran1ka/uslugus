@@ -6,6 +6,7 @@
   grid-template-columns: 50px 1fr max-content;
   grid-template-areas: "avatar present price" "contacts contacts review";
   gap: 21px 24px;
+  cursor: pointer;
 
   @include mobile {
     grid-template-areas: "avatar . price" "present present review" "contacts contacts contacts";
