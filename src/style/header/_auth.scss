@@ -1,0 +1,35 @@
+.auth {
+  display: grid;
+  gap: 5px 9px !important;
+  grid-template-columns: 24px max-content max-content;
+  grid-template-areas: "avatar name edit" ". category .";
+
+  &__avatar {
+    grid-area: avatar;
+  }
+
+  &__name {
+    grid-area: name;
+  }
+
+  &__category {
+    grid-area: category;
+  }
+
+  &__btn-edit {
+    grid-area: edit;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      background-color: $color-primary;
+    }
+  }
+}
