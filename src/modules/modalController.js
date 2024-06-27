@@ -48,7 +48,11 @@ export const modalController = ({
       }
     },
     openModal: async (handler) => {
-      await data.handlerOpenModal({ handler, modalElem });
+      await data.handlerOpenModal({
+        handler,
+        modalElem,
+        closeModal: data.closeModal,
+      });
 
       modalElem.style.visibility = "visible";
       modalElem.style.opacity = 1;

@@ -1,3 +1,4 @@
+import { commentFormController } from "./commentFormController";
 import { API_URL, directions } from "./const";
 import { createElement } from "./createElement";
 import { createReview } from "./createReview";
@@ -5,7 +6,7 @@ import { createStars } from "./createStars";
 import { ratingController } from "./ratingController";
 import { store } from "./store";
 
-export const renderModal = (parrent, data) => {
+export const renderModal = (parrent, data, closeModal) => {
   parrent.textContent = "";
 
   console.log(data);
@@ -86,18 +87,18 @@ export const renderModal = (parrent, data) => {
   );
   phoneLink.innerHTML = `
     <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.8098 14.8525L16.4188 12.9706C16.1895 12.8719 15.9392 12.8322 15.6907 12.855C15.4421 12.8779 15.2032 12.9626 14.9958 13.1014L12.648 14.6664C11.2131 13.9685 10.0518 12.8123 9.34753 11.3805L9.34771 11.3803L10.9072 8.99734C11.043 8.79047 11.1253 8.55318 11.1469 8.30669C11.1685 8.0602 11.1287 7.8122 11.031 7.58487L9.1474 3.19006C9.01918 2.89174 8.79778 2.64298 8.51635 2.48103C8.23492 2.31907 7.9086 2.25263 7.58624 2.29166C6.31956 2.45452 5.15548 3.07296 4.31148 4.03144C3.46749 4.98992 3.00129 6.22289 3 7.5C3 14.944 9.05603 21 16.5 21C17.7771 20.9987 19.0101 20.5325 19.9686 19.6885C20.9271 18.8445 21.5455 17.6804 21.7083 16.4137C21.7473 16.0913 21.6808 15.765 21.5188 15.4836C21.3568 15.2022 21.1081 14.9808 20.8098 14.8525Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <span>${data.phone}</span>
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.8098 14.8525L16.4188 12.9706C16.1895 12.8719 15.9392 12.8322 15.6907 12.855C15.4421 12.8779 15.2032 12.9626 14.9958 13.1014L12.648 14.6664C11.2131 13.9685 10.0518 12.8123 9.34753 11.3805L9.34771 11.3803L10.9072 8.99734C11.043 8.79047 11.1253 8.55318 11.1469 8.30669C11.1685 8.0602 11.1287 7.8122 11.031 7.58487L9.1474 3.19006C9.01918 2.89174 8.79778 2.64298 8.51635 2.48103C8.23492 2.31907 7.9086 2.25263 7.58624 2.29166C6.31956 2.45452 5.15548 3.07296 4.31148 4.03144C3.46749 4.98992 3.00129 6.22289 3 7.5C3 14.944 9.05603 21 16.5 21C17.7771 20.9987 19.0101 20.5325 19.9686 19.6885C20.9271 18.8445 21.5455 17.6804 21.7083 16.4137C21.7473 16.0913 21.6808 15.765 21.5188 15.4836C21.3568 15.2022 21.1081 14.9808 20.8098 14.8525Z"
+        fill="currentColor"
+      />
+    </svg>
+    <span>${data.phone}</span>
   `;
 
   const emailLink = createElement(
@@ -229,6 +230,7 @@ export const renderModal = (parrent, data) => {
     },
     container
   );
+  form.dataset.id = data.id;
 
   const fieldsetRegistration = createElement(
     "fieldset",
@@ -285,7 +287,7 @@ export const renderModal = (parrent, data) => {
     "input",
     {
       className: "form__input",
-      name: "tel",
+      name: "phone",
       type: "number",
     },
     labelPhone
@@ -312,7 +314,7 @@ export const renderModal = (parrent, data) => {
     "textarea",
     {
       className: "form__textarea",
-      name: "komment",
+      name: "text",
     },
     labelComment
   );
@@ -354,11 +356,11 @@ export const renderModal = (parrent, data) => {
   }
 
   const inputHidden = createElement(
-    "div",
+    "input",
     {
       className: "rating__input",
       type: "hidden",
-      name: "rating",
+      name: "stars",
     },
     rating
   );
@@ -406,4 +408,6 @@ export const renderModal = (parrent, data) => {
       />
     </svg>
   `;
+
+  commentFormController(form, closeModal);
 };

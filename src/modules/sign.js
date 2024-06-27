@@ -69,7 +69,7 @@ export const signUpController = (cb) => {
       return;
     }
 
-    if (form.dataset.method !== "PACTH") {
+    if (form.dataset.method !== "PATCH") {
       const servicesList = document.querySelector(".services__list");
       servicesList.append(createCard(dataResponse));
       auth(dataResponse);
